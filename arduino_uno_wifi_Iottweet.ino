@@ -1,10 +1,20 @@
+/*
+Simple code for Arduino UNO WiFi board.
+This code is raw coding to send data to IoTtweet.com dashboard
+2017.Mar.20
+Coder : Isaranu
+
+** This code is not support send tweet message to dashboard.
+We are under developing it **.
+*/
+
 #include <Wire.h>
 #include <UnoWiFiDevEd.h>
 
-String _id = "IoTtweet-UserID";
-String _key = "device-key";
+String _id = "IoTtweet-UserID"; /*Numerical ID by 6 digit*/
+String _key = "device-key";     /*Registered key of IoT device in "My IoT garage"*/
 
-float _d0, _d1, _d2, _d3;  
+float _d0, _d1, _d2, _d3;       /*Data slot0-3 send to Dashboard*/  
 
 void setup() {
   Serial.begin(115200);
@@ -13,18 +23,13 @@ void setup() {
 
 void loop() {
   
-//Example data generating
+/*Example data generating*/
   _d0 = random(20,80);
   _d1 = random(30,70);
   _d2 = random(40,60);
   _d3 = random(50,55);
 
   sendToIoTtweet();
-  /*Bug : 
-    1. Ciao ส่ง Payload ได้ไม่เกิน 70 character/packet.
-    2. ทำเป็น Lib. ไม่ได้ (ยังไม่ทราบสาเหตุ)
-    3. ส่ง argument เข้าไปใน function ไม่ได้
-  */
 
 }
 
