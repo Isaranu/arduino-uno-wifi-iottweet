@@ -1,8 +1,8 @@
 #include <Wire.h>
 #include <UnoWiFiDevEd.h>
 
-String _id = "000031";
-String _key = "qisxbp8ycwuw";
+String _id = "IoTtweet-UserID";
+String _key = "device-key";
 
 float _d0, _d1, _d2, _d3;  
 
